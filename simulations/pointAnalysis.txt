@@ -1,0 +1,402 @@
+]0;IPython: code/simulations    x  y  0  1  2
+0  -1 -1  2  0  0
+1  -1 -1  0  0  1
+2  -1 -1  0  0  2
+3   1  1  1  0  0
+4   1  1  1  1  1
+5  -1 -1  2  0  2
+6  -1 -1  3  0  4
+7   1  1  1  0  2
+8   1  1  1  0  0
+9  -1 -1  1  0  0
+10  1  1  0  2  1
+11 -1 -1  1  1  0
+12 -1 -1  1  0  1
+13  1  1  1  1  1
+14 -1 -1  0  0  2
+15 -1 -1  0  1  0
+16 -1  1  0  0  1
+17 -1 -1  2  0  1
+18 -1 -1  0  0  2
+19 -1 -1  2  0  2
+point:  0
+k_tilde:  1
+rho:  1.0
+nxz:  0
+nyz:  0
+nz: 0
+estimate:  0.0
+truth:  0.19274475702175753 
+
+point:  1
+k_tilde:  1
+rho:  1.0
+nxz:  1
+nyz:  0
+nz: 1
+estimate:  0.0
+truth:  0.19274475702175753 
+
+point:  2
+k_tilde:  2
+rho:  0
+nxz:  2
+nyz:  2
+nz: 2
+estimate:  -0.5000000000000001
+truth:  0.19274475702175753 
+
+point:  3
+k_tilde:  1
+rho:  0
+nxz:  1
+nyz:  1
+nz: 2
+estimate:  -0.5000000000000001
+truth:  0.19274475702175753 
+
+point:  4
+k_tilde:  1
+rho:  0
+nxz:  1
+nyz:  1
+nz: 1
+estimate:  -1.0
+truth:  0.19274475702175753 
+
+point:  5
+k_tilde:  1
+rho:  0
+nxz:  1
+nyz:  1
+nz: 1
+estimate:  -1.0
+truth:  0.19274475702175753 
+
+point:  6
+k_tilde:  1
+rho:  2.0
+nxz:  0
+nyz:  0
+nz: 0
+estimate:  0.0
+truth:  0.19274475702175753 
+
+point:  7
+k_tilde:  1
+rho:  1.0
+nxz:  0
+nyz:  0
+nz: 0
+estimate:  0.0
+truth:  0.19274475702175753 
+
+point:  8
+k_tilde:  1
+rho:  0
+nxz:  1
+nyz:  1
+nz: 2
+estimate:  -0.5000000000000001
+truth:  0.19274475702175753 
+
+point:  9
+k_tilde:  1
+rho:  1.0
+nxz:  0
+nyz:  0
+nz: 2
+estimate:  1.5
+truth:  0.19274475702175753 
+
+point:  10
+k_tilde:  1
+rho:  1.0
+nxz:  0
+nyz:  0
+nz: 0
+estimate:  0.0
+truth:  0.19274475702175753 
+
+point:  11
+k_tilde:  1
+rho:  1.0
+nxz:  0
+nyz:  0
+nz: 0
+estimate:  0.0
+truth:  0.19274475702175753 
+
+point:  12
+k_tilde:  1
+rho:  1.0
+nxz:  0
+nyz:  0
+nz: 0
+estimate:  0.0
+truth:  0.19274475702175753 
+
+point:  13
+k_tilde:  1
+rho:  0
+nxz:  1
+nyz:  1
+nz: 1
+estimate:  -1.0
+truth:  0.19274475702175753 
+
+point:  14
+k_tilde:  2
+rho:  0
+nxz:  2
+nyz:  2
+nz: 2
+estimate:  -0.5000000000000001
+truth:  0.19274475702175753 
+
+point:  15
+k_tilde:  1
+rho:  1.0
+nxz:  0
+nyz:  0
+nz: 0
+estimate:  0.0
+truth:  0.19274475702175753 
+
+point:  16
+k_tilde:  1
+rho:  2.0
+nxz:  8
+nyz:  5
+nz: 13
+estimate:  -1.821056721056721
+truth:  0.19274475702175753 
+
+point:  17
+k_tilde:  1
+rho:  1.0
+nxz:  0
+nyz:  0
+nz: 0
+estimate:  0.0
+truth:  0.19274475702175753 
+
+point:  18
+k_tilde:  2
+rho:  0
+nxz:  2
+nyz:  2
+nz: 2
+estimate:  -0.5000000000000001
+truth:  0.19274475702175753 
+
+point:  19
+k_tilde:  1
+rho:  0
+nxz:  1
+nyz:  1
+nz: 1
+estimate:  -1.0
+truth:  0.19274475702175753 
+
+           0         1         2         3         4
+0   1.665782  1.542915 -0.686416  0.275050  0.820299
+1  -0.814113 -1.130419  1.034300 -1.809699  0.245011
+2   0.496713 -0.482147  0.337333 -0.855620  1.352821
+3  -0.754535  0.333244  0.507960  0.278212 -0.929686
+4   0.897113  0.722778  0.272480 -0.899947 -0.017532
+5   1.164621  0.625072 -1.082849 -0.517081  0.882068
+6  -0.265028  0.321310 -0.601028  0.438098 -1.070144
+7  -0.529207 -1.171407  1.583200 -1.963968  0.945410
+8  -1.786088 -1.299673 -0.975808 -1.545831 -0.524733
+9   0.185680 -0.539726  0.214512  0.014243  1.727155
+10  2.420785  1.673191 -0.305455 -0.343155  1.341995
+11 -1.192405 -0.755039  1.410631  0.525236 -1.511535
+12  1.710872  0.356157 -0.589673 -0.077056 -1.160728
+13  0.216617  0.379512  0.067610  0.450529 -0.879765
+14 -0.621442 -1.014636 -0.501722 -2.932424  0.073515
+15 -0.943589 -0.500799 -0.622331  0.417864  0.823938
+16  0.252381 -0.289687  0.862257 -0.918278  0.444492
+17 -1.400146 -1.784469  0.095383 -1.234984 -1.633658
+18  0.291414  0.796927  0.038256  0.100214  1.376767
+19  0.144907  0.577925 -0.486172 -1.595228  1.958632
+point:  0
+k_tilde:  1
+rho:  1.0
+nxz:  0
+nyz:  0
+nz: 0
+estimate:  0.0
+truth:  0.19274475702175753 
+
+point:  1
+k_tilde:  1
+rho:  1.0
+nxz:  1
+nyz:  0
+nz: 1
+estimate:  0.0
+truth:  0.19274475702175753 
+
+point:  2
+k_tilde:  2
+rho:  0
+nxz:  2
+nyz:  2
+nz: 2
+estimate:  -0.5000000000000001
+truth:  0.19274475702175753 
+
+point:  3
+k_tilde:  1
+rho:  0
+nxz:  1
+nyz:  1
+nz: 2
+estimate:  -0.5000000000000001
+truth:  0.19274475702175753 
+
+point:  4
+k_tilde:  1
+rho:  0
+nxz:  1
+nyz:  1
+nz: 1
+estimate:  -1.0
+truth:  0.19274475702175753 
+
+point:  5
+k_tilde:  1
+rho:  0
+nxz:  1
+nyz:  1
+nz: 1
+estimate:  -1.0
+truth:  0.19274475702175753 
+
+point:  6
+k_tilde:  1
+rho:  2.0
+nxz:  0
+nyz:  0
+nz: 0
+estimate:  0.0
+truth:  0.19274475702175753 
+
+point:  7
+k_tilde:  1
+rho:  1.0
+nxz:  0
+nyz:  0
+nz: 0
+estimate:  0.0
+truth:  0.19274475702175753 
+
+point:  8
+k_tilde:  1
+rho:  0
+nxz:  1
+nyz:  1
+nz: 2
+estimate:  -0.5000000000000001
+truth:  0.19274475702175753 
+
+point:  9
+k_tilde:  1
+rho:  1.0
+nxz:  0
+nyz:  0
+nz: 2
+estimate:  1.5
+truth:  0.19274475702175753 
+
+point:  10
+k_tilde:  1
+rho:  1.0
+nxz:  0
+nyz:  0
+nz: 0
+estimate:  0.0
+truth:  0.19274475702175753 
+
+point:  11
+k_tilde:  1
+rho:  1.0
+nxz:  0
+nyz:  0
+nz: 0
+estimate:  0.0
+truth:  0.19274475702175753 
+
+point:  12
+k_tilde:  1
+rho:  1.0
+nxz:  0
+nyz:  0
+nz: 0
+estimate:  0.0
+truth:  0.19274475702175753 
+
+point:  13
+k_tilde:  1
+rho:  0
+nxz:  1
+nyz:  1
+nz: 1
+estimate:  -1.0
+truth:  0.19274475702175753 
+
+point:  14
+k_tilde:  2
+rho:  0
+nxz:  2
+nyz:  2
+nz: 2
+estimate:  -0.5000000000000001
+truth:  0.19274475702175753 
+
+point:  15
+k_tilde:  1
+rho:  1.0
+nxz:  0
+nyz:  0
+nz: 0
+estimate:  0.0
+truth:  0.19274475702175753 
+
+point:  16
+k_tilde:  1
+rho:  2.0
+nxz:  8
+nyz:  5
+nz: 13
+estimate:  -1.821056721056721
+truth:  0.19274475702175753 
+
+point:  17
+k_tilde:  1
+rho:  1.0
+nxz:  0
+nyz:  0
+nz: 0
+estimate:  0.0
+truth:  0.19274475702175753 
+
+point:  18
+k_tilde:  2
+rho:  0
+nxz:  2
+nyz:  2
+nz: 2
+estimate:  -0.5000000000000001
+truth:  0.19274475702175753 
+
+point:  19
+k_tilde:  1
+rho:  0
+nxz:  1
+nyz:  1
+nz: 1
+estimate:  -1.0
+truth:  0.19274475702175753 
+
