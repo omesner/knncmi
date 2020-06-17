@@ -8,21 +8,16 @@ import os
 import matplotlib.pyplot as plt
 from functools import partial
 import knncmi
-from createSimData import cmi4point
+from createSimData import cmi4point, cmi4
 
 def import_raw_adult_data(rows = None):
-    col_names = ['age', 'workclass', 'income', 'edcat', 'ednum', 'maritalstat',
-                 'occupation', 'relationship', 'race', 'sex', 'capgains',
-                 'caploss', 'hrspweek', 'nativecountry']
-    dat = pd.read_csv("./adult.data", names=col_names, index_col=False)
-    if rows:
-        dat = dat.iloc[0:rows]
-    dat['income'] = dat['income']/100000
-    dat['ednum'] = dat['ednum']/100
-    #dat['race'] = dat['race'].replace({' Amer-Indian-Eskimo': ' Other',
-    #                                   ' Asian-Pac-Islander': ' Other'})
-    print("data imported")
-    return dat
+    dat = pd.read_csv('../../compas-analysis/compas-scores.csv')
+    out = dat[(dat['decile_score'] != -1) & (dat['is_recid'] != -1) &
+              (abs(dat['days_b_screening_arrest']) < 90)][[
+                  'race', 'decile_score', 'is_recid']]
+    out['decile_score'] = out['decile_score']/10
+    print(f"Data: column names: {list(out.columns)}, rows: {out.shape[0]}")
+    return out
 
 def create_sub_array(dat, var_list, size, seed):
     np.random.seed(seed)
@@ -85,24 +80,25 @@ def make_plot(dat):
     plt.legend()
     plt.xlabel("Sample Size")
     plt.ylabel("Estimated I(X;Y|Z)")
-    plt.savefig('incomeRace.pdf')
+    plt.savefig('race_recid.pdf')
 
 
 if __name__ == '__main__':
 
     runs = 100
     k = 7
-    x = [2] #  'income'
-    y = [8, 9] #  'race, sex'
-    z = [4] #  'ednum'
+    x = [0] # race
+    y = [1] # compas score 
+    z = [2] # recidivism
     dat = import_raw_adult_data()
-    #p = multiprocessing.Pool(os.cpu_count())
-    #result =  p.map(run, range(runs))
-    #out = pd.concat(result)
-    #out.to_csv("income_results.csv")
-    #make_plot(out)
-    col_names = ['age', 'workclass', 'income', 'edcat', 'ednum', 'maritalstat',
-                 'occupation', 'relationship', 'race', 'sex', 'capgains',
-                 'caploss', 'hrspweek', 'nativecountry']
-    dat = pd.read_csv("./adult.data", names=col_names, index_col=False)
-    print(dat.groupby(['sex', 'race'])['income', 'ednum'].median())
+    p = multiprocessing.Pool(os.cpu_count())
+    result =  p.map(run, range(runs))
+    out = pd.concat(result)
+    out.to_csv("recid.csv")
+    make_plot(out)
+    print("By race")
+    pd.set_option('display.max_columns', 16)
+    print(dat.groupby(['race']).describe())
+    print("CMI ests on all data")
+    tots = cmi4(x,y,z,k,dat)
+    print(f"FP: {tots[0]}, RAVK1: {tots[1]}, RAVK2: {tots[2]}, Prop: {tots[3]}")

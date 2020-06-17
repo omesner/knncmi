@@ -48,7 +48,7 @@ for dat in dats:
              marker = 'x', color = colors[3], label = 'Proposed')
     
     title = list(curDat['title'])[0]
-    plt.title(title) # this line was commented out for the paper
+    # plt.title(title) # this line was commented out for the paper
     plt.legend()
     plt.xlabel("Sample Size")
     plt.ylabel("Estimated I(X;Y|Z)")

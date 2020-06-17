@@ -54,10 +54,7 @@ def cmi4point(point_i, x, y, z, k, distArray):
     nxz = knncmi.countNeighbors(coord_dists, rho, x_coords + z_coords)
     nyz = knncmi.countNeighbors(coord_dists, rho, y_coords + z_coords)
     nz = knncmi.countNeighbors(coord_dists, rho, z_coords)
-    if k == k_tilde:
-        xiProp = digamma(k_tilde) - digamma(nxz) - digamma(nyz) + digamma(nz)
-    else:
-        xiProp = np.log(k_tilde) - np.log(nxz) - np.log(nyz) + np.log(nz)
+    xiProp = digamma(k_tilde) - digamma(nxz) - digamma(nyz) + digamma(nz)
     del k_tilde, nxz, nyz, nz
     
     return np.array([xiFP, xiRAVK1, xiRAVK2, xiProp])
@@ -103,9 +100,10 @@ def parallelSim(seed):
                     runDat = runDat.append(out_row, ignore_index = True)
     return(runDat)
 
+
 if __name__ == '__main__':
 
-    runs = 10 #Change to 100 to replicate simulations in paper
+    runs = 100  # Change to 100 to replicate simulations in paper
     samp_sizes = range(100, 1001, 100)
     dims = [1]
     dats = [cindep, corrUnif, mixture, discDep, contDep, contIndep, discIndep,
