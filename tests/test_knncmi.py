@@ -3,7 +3,6 @@
 import unittest
 from knncmi import *
 import random
-import ipdb
 
 # generate continuous data
 def gauss(n,d, cov = 0.8):
@@ -291,7 +290,7 @@ class test_class(unittest.TestCase):
         data = discrete(20, 3)
         distArray = getPairwiseDistArray(data)
         out = cmiPoint(0, [0], [1], [3], 3, distArray)
-        outCorrect = np.log(5) - np.log(5) - np.log(5) + np.log(7)
+        outCorrect = digamma(5) - digamma(5) - digamma(5) + digamma(7)
         self.assertEqual(out, outCorrect)
 
         # with higher dimension in x and y
@@ -324,7 +323,7 @@ class test_class(unittest.TestCase):
         coord_dist_list = getPointCoordDists(distArray, 0)
         
         out = miPoint(0, [3], [0], 1, distArray)
-        outCorrect = np.log(1) + np.log(3) - np.log(1) - np.log(2)
+        outCorrect = digamma(1) + digamma(3) - digamma(1) - digamma(2)
         self.assertAlmostEqual(out, outCorrect)
         #print(helper2(data, [3], [0], 1))
         #outCorrect = digamma(k_tilde) + digamma(n) - digamma(nx) - digamma(ny)
@@ -346,28 +345,28 @@ class test_class(unittest.TestCase):
         n, p = data.shape
         
         out = cmi([0], [1], [2], 3, data)
-        self.assertLessEqual(np.abs(out), 2 * np.log(n))
+        self.assertLessEqual(np.abs(out), 2 * digamma(n))
 
         out = cmi([0], [1], [], 3, data)
-        self.assertLessEqual(np.abs(out), 2 * np.log(n))
+        self.assertLessEqual(np.abs(out), 2 * digamma(n))
 
         out = cmi([0,2], [1], [4], 3, data)
-        self.assertLessEqual(np.abs(out), 2 * np.log(n))
+        self.assertLessEqual(np.abs(out), 2 * digamma(n))
 
         out = cmi([4], [1], [], 3, data)
-        self.assertLessEqual(out, 2 * np.log(n))
+        self.assertLessEqual(out, 2 * digamma(n))
 
         out = cmi(['slength'], ['swidth'], ['plength'], 3, data)
-        self.assertLessEqual(np.abs(out), 2 * np.log(n))
+        self.assertLessEqual(np.abs(out), 2 * digamma(n))
 
         out = cmi(['slength'], ['swidth'], [], 3, data)
-        self.assertLessEqual(np.abs(out), 2 * np.log(n))
+        self.assertLessEqual(np.abs(out), 2 * digamma(n))
 
         out = cmi(['slength'], ['swidth'], ['class'], 3, data)
-        self.assertLessEqual(np.abs(out), 2 * np.log(n))
+        self.assertLessEqual(np.abs(out), 2 * digamma(n))
 
         out = cmi(['class'], ['swidth'], [], 3, data)
-        self.assertLessEqual(out, 2 * np.log(n))
+        self.assertLessEqual(out, 2 * digamma(n))
 
 if __name__ == '__main__':
     unittest.main()

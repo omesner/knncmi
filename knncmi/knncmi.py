@@ -57,7 +57,6 @@ def countNeighbors(coord_dists, rho, coords = list()):
     output: scalar integer of number of points within ell infinity radius
     '''
     
-    #ipdb.set_trace()
     if not coords:
         coords = range(coord_dists.shape[1])
     dists = np.max(coord_dists[:,coords], axis = 1)
@@ -99,10 +98,7 @@ def cmiPoint(point_i, x, y, z, k, distArray):
     nxz = countNeighbors(coord_dists, rho, x_coords + z_coords)
     nyz = countNeighbors(coord_dists, rho, y_coords + z_coords)
     nz = countNeighbors(coord_dists, rho, z_coords)
-    if k == k_tilde:
-        xi = digamma(k_tilde) - digamma(nxz) - digamma(nyz) + digamma(nz)
-    else:
-        xi = np.log(k_tilde) - np.log(nxz) - np.log(nyz) + np.log(nz)
+    xi = digamma(k_tilde) - digamma(nxz) - digamma(nyz) + digamma(nz)
     return xi
 
 def miPoint(point_i, x, y, k, distArray):
@@ -123,10 +119,7 @@ def miPoint(point_i, x, y, k, distArray):
     y_coords = list(range(len(x), len(x+y)))
     nx = countNeighbors(coord_dists, rho, x_coords)
     ny = countNeighbors(coord_dists, rho, y_coords)
-    if k == k_tilde:
-        xi = digamma(k_tilde) + digamma(n) - digamma(nx) - digamma(ny)
-    else:
-        xi = np.log(k_tilde) + np.log(n) - np.log(nx) - np.log(ny)
+    xi = digamma(k_tilde) + digamma(n) - digamma(nx) - digamma(ny)
     return xi
     
 def cmi(x, y, z, k, data, discrete_dist = 1, minzero = 1):
