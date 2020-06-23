@@ -88,8 +88,8 @@ if __name__ == '__main__':
     runs = 100
     k = 7
     x = [0] # race
-    y = [1] # compas score 
-    z = [2] # recidivism
+    z = [1] # compas score 
+    y = [2] # recidivism
     dat = import_raw_adult_data()
     p = multiprocessing.Pool(os.cpu_count())
     result =  p.map(run, range(runs))
