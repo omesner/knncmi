@@ -141,7 +141,7 @@ def cmi(x, y, z, k, data, discrete_dist = 1, minzero = 1):
     # convert variable to index if not already
     vrbls = [x,y,z]
     for i, lst in enumerate(vrbls):
-        if all(type(elem) == str for elem in lst) & len(lst) > 0:
+        if all(type(elem) == str for elem in lst) and len(lst) > 0:
             vrbls[i] = list(data.columns.get_indexer(lst))
     x,y,z = vrbls
             

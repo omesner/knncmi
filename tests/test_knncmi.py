@@ -365,6 +365,8 @@ class test_class(unittest.TestCase):
         out = cmi(['slength'], ['swidth'], ['class'], 3, data)
         self.assertLessEqual(np.abs(out), 2 * digamma(n))
 
+        cmi(['slength'], ['swidth'], ['class','plength'], 3, data)
+
         out = cmi(['class'], ['swidth'], [], 3, data)
         self.assertLessEqual(out, 2 * digamma(n))
 
