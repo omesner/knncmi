@@ -27,12 +27,15 @@ def getPairwiseDistArray(data, coords = [], discrete_dist = 1):
     distArray = np.empty([p,n,n])
     distArray[:] = np.nan
     for coord in coords:
-        if np.issubdtype(data[col_names[coord]].dtype, np.number):
-            distArray[coord,:,:] = abs(data[col_names[coord]].values -
-                                       data[col_names[coord]].values[:,None])
+        thisdtype=data[col_names[coord]].dtype
+        is_numerical = (isinstance(thisdtype, np.dtype) 
+            and np.issubdtype(thisdtype, np.number))
+        if is_numerical:
+            distArray[coord,:,:] = abs(data[col_names[coord]].to_numpy() -
+                                       data[col_names[coord]].to_numpy()[:,None])
         else:
-            distArray[coord,:,:] = (1 - (data[col_names[coord]].values ==
-                                    data[col_names[coord]].values[:,None])) * discrete_dist
+            distArray[coord,:,:] = (1 - (data[col_names[coord]].to_numpy() ==
+                                    data[col_names[coord]].to_numpy()[:,None])) * discrete_dist
     return distArray
 
 def getPointCoordDists(distArray, ind_i, coords = list()):
