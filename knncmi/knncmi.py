@@ -28,9 +28,7 @@ def getPairwiseDistArray(data, coords = [], discrete_dist = 1):
     distArray[:] = np.nan
     for coord in coords:
         thisdtype=data[col_names[coord]].dtype
-        is_numerical = (isinstance(thisdtype, np.dtype) 
-            and np.issubdtype(thisdtype, np.number))
-        if is_numerical:
+        if pd.api.types.is_numeric_dtype(thisdtype):
             distArray[coord,:,:] = abs(data[col_names[coord]].to_numpy() -
                                        data[col_names[coord]].to_numpy()[:,None])
         else:
