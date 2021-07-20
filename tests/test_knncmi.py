@@ -370,5 +370,28 @@ class test_class(unittest.TestCase):
         out = cmi(['class'], ['swidth'], [], 3, data)
         self.assertLessEqual(out, 2 * digamma(n))
 
+    def test_dtypes(self):
+        """Check that various dtypes can be used.
+        
+        This does NOT check if the results are correct, only that the API works
+        """
+        base = [1,1,2,3,2.1,7,2,3,4,1,2,58,6,8,1,2.3]
+        data = pd.DataFrame(
+            {
+                'float':pd.Series(base).astype('float'),
+                'int':pd.Series(base).astype('int'),
+                'nullableInt':pd.Series([int(b) if b != 1 else float('nan') for b in base]).astype('Int64'), #nullable integer
+                'str':pd.Series(base).astype('string'),
+                'category':pd.Series(base).astype('category'),
+                'boolean':pd.Series([b==1 for b in base]).astype('boolean'),
+            }
+        )
+        cmi(['int'],['float'],[],3,data)
+        cmi(['int'],['str'],[],3,data)
+        cmi(['int'],['category'],[],3,data)
+        cmi(['int'],['category'],['boolean'],3,data)
+        self.assertRaisesRegex(TypeError,"NAType",lambda:cmi(['nullableInt'],['category'],[],3,data))
+
+
 if __name__ == '__main__':
     unittest.main()
